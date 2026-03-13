@@ -25,5 +25,10 @@ mongoose.connect(process.env.MONGO_URI)
         console.log("MongoDB Connected");
         const PORT = process.env.PORT || 5000;
         app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+        // Add this to server.js
+app.get('/', (req, res) => {
+    res.send('<h1>Aegis-Health Link API: Systems Online</h1><p>The decentralized hashing engine and medical registry are active.</p>');
+});
     })
+
     .catch(err => console.log(err));
